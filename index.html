@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JA Power Porter U15.0 LV — Acumulator Fotovoltaic</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="loader">
+  <div class="loader-text">JA POWER</div>
+  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  <div class="loader-perc" id="loader-perc">0%</div>
+</div>
+
+<div class="cursor-glow" id="cursor-glow"></div>
+<canvas id="bg-canvas"></canvas>
+
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">JA POWER</a>
+  <ul class="nav-links">
+    <li><a href="#about">Despre</a></li>
+    <li><a href="#technology">Tehnologie</a></li>
+    <li><a href="#specs">Specificatii</a></li>
+    <li><a href="#gallery">Galerie</a></li>
+    <li><a href="#downloads">Documente</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero" id="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-left">
+    <div class="hero-tag">Acumulator Fotovoltaic — LiFePO4</div>
+    <h1 class="hero-h1">JA<br><span>POWER</span><br>PORTER</h1>
+    <div class="hero-product-wrapper">
+      <img src="assets/4-no-bg.png" alt="JA Power Porter U15.0 LV" class="hero-product-img">
+    </div>
+    <div class="hero-model">U15.0 LV</div>
+    <p class="hero-desc">Baterie de stocare de înaltă performanță pentru sisteme fotovoltaice rezidențiale și comerciale. Capacitate 15,36 kWh, garanție 8.000 cicluri — independență energetică reală.</p>
+    <div class="hero-ctas">
+      <a href="#specs" class="btn-primary"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>Specificatii</a>
+      <a href="#downloads" class="btn-secondary"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Documente</a>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ── ABOUT ── -->
+<section class="about" id="about">
+  <div class="about-left">
+    <div class="reveal-left">
+      <div class="section-label">Despre produs</div>
+      <h2 class="section-title">Stocare<br><span class="accent-line">solară</span><br>inteligentă</h2>
+    </div>
+    <div class="about-feature reveal-left" style="transition-delay:0.12s">
+      <div class="about-feature-title">Energia ta</div>
+      <div class="about-feature-desc">JA Power Porter U15.0 LV este un acumulator destinat stocării energiei electrice produse de panouri solare. Permite utilizarea energiei solare pe timp de noapte și în perioadele fără producție.</div>
+    </div>
+    <div class="about-feature reveal-left" style="transition-delay:0.24s">
+      <div class="about-feature-title">Compatibilitate</div>
+      <div class="about-feature-desc">Proiectat special pentru integrare rapidă în sisteme fotovoltaice cu invertoare compatibile 48–51.2V. Ideal ca baterie principală sau suplimentară pentru creșterea capacității.</div>
+    </div>
+  </div>
+  <div class="about-center">
+    <div class="product-showcase reveal">
+      <img src="assets/1-no-bg.png" alt="JA Power Porter U15.0 LV — Produs">
+    </div>
+  </div>
+  <div class="about-right">
+    <div class="about-feature reveal-right" style="transition-delay:0.12s">
+      <div class="about-feature-title">Design Profesional</div>
+      <div class="about-feature-desc">Culoarea albă oferă un aspect profesional, potrivit pentru orice instalație de sisteme fotovoltaice. Aspect modern și elegant în orice spațiu.</div>
+    </div>
+    <div class="about-feature reveal-right" style="transition-delay:0.24s">
+      <div class="about-feature-title">Grad Protecție IP31</div>
+      <div class="about-feature-desc">Permite instalarea în spații interioare — camere tehnice sau dulapuri electrice dedicate. Protecție optimă pentru funcționare pe termen lung.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TECHNOLOGY ── -->
+<section class="technology" id="technology">
+  <div class="tech-header reveal">
+    <div class="section-label">Tehnologie</div>
+    <h2 class="section-title">LiFePO4<br>Next Level</h2>
+    <p style="color:var(--c-muted);font-size:16px;line-height:1.8;max-width:500px;margin-top:16px;">Chimia LiFePO4 reprezintă standardul de aur în stocarea energiei solare — sigur, stabil, durabil.</p>
+  </div>
+  <div class="tech-grid">
+    <div class="tech-card" style="transition-delay:0s"><div class="tech-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><div class="tech-num">01</div><div class="tech-title">Siguranță Maximă</div><div class="tech-desc">Tehnologia LiFePO4 asigură stabilitate termică superioară și elimină riscul de supraîncălzire. Cea mai sigură chimie pentru uz rezidențial și comercial.</div></div>
+    <div class="tech-card" style="transition-delay:0.1s"><div class="tech-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="tech-num">02</div><div class="tech-title">Durată de Viață</div><div class="tech-desc">8.000 de cicluri complete de încărcare-descărcare garantate. Utilizare zilnică timp de peste 20 de ani fără degradare semnificativă a capacității.</div></div>
+    <div class="tech-card" style="transition-delay:0.2s"><div class="tech-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div><div class="tech-num">03</div><div class="tech-title">Compatibilitate LV</div><div class="tech-desc">Tensiunea de 51.2V îl face compatibil cu majoritatea invertoarelor low-voltage utilizate în sisteme fotovoltaice hibride și off-grid de pe piață.</div></div>
+    <div class="tech-card" style="transition-delay:0.3s"><div class="tech-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="tech-num">04</div><div class="tech-title">Eficiență Înaltă</div><div class="tech-desc">Randament de descărcare optimizat pentru cicluri complete zilnice. Ideal pentru sisteme cu consum ridicat rezidențial sau comercial continuu.</div></div>
+    <div class="tech-card" style="transition-delay:0.4s"><div class="tech-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="tech-num">05</div><div class="tech-title">Scalabilitate</div><div class="tech-desc">Funcționează ca baterie principală sau suplimentară. Sistemul permite extinderea capacității de stocare prin conectarea mai multor unități.</div></div>
+    <div class="tech-card" style="transition-delay:0.5s"><div class="tech-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div><div class="tech-num">06</div><div class="tech-title">Independență Energetică</div><div class="tech-desc">15,36 kWh capacitate acoperă consumul mediu zilnic al unui gospodărie. Reduce la minimum dependența de rețeaua publică de distribuție.</div></div>
+  </div>
+</section>
+
+<!-- ── SPECS ── -->
+<section class="specs-section" id="specs">
+  <div class="reveal-left">
+    <div class="section-label">Specificații tehnice</div>
+    <h2 class="section-title">Date<br>Tehnice</h2>
+    <p style="color:var(--c-muted);font-size:15px;line-height:1.8;margin:20px 0 40px;">Toate specificațiile acumulatorului JA Power Porter U15.0 LV pentru integrare optimă în sistemul dumneavoastră fotovoltaic.</p>
+    <div class="accordion-group">
+      <div class="accordion-item active">
+        <div class="accordion-header"><span>Specificații Generale</span><div class="accordion-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div></div>
+        <div class="accordion-content">
+          <div class="accordion-row"><div class="accordion-row-key">Model</div><div class="accordion-row-val">Power Porter U15.0 LV</div></div>
+          <div class="accordion-row"><div class="accordion-row-key">Energie nominală</div><div class="accordion-row-val">15 kWh</div></div>
+          <div class="accordion-row"><div class="accordion-row-key">Tip celule</div><div class="accordion-row-val">LiFePO4</div></div>
+          <div class="accordion-row"><div class="accordion-row-key">Culoare</div><div class="accordion-row-val">Alb</div></div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header"><span>Power & Capacitate</span><div class="accordion-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div></div>
+        <div class="accordion-content">
+          <div class="accordion-row"><div class="accordion-row-key">Capacitate nominală</div><div class="accordion-row-val">300Ah</div></div>
+          <div class="accordion-row"><div class="accordion-row-key">Tensiune nominală</div><div class="accordion-row-val">51.2 V</div></div>
+          <div class="accordion-row"><div class="accordion-row-key">Curent nominal</div><div class="accordion-row-val">200A</div></div>
+          <div class="accordion-row"><div class="accordion-row-key">Eficiență</div><div class="accordion-row-val">95%</div></div>
+          <div class="accordion-row"><div class="accordion-row-key">DOD</div><div class="accordion-row-val">90%</div></div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header"><span>Condiții de Operare</span><div class="accordion-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div></div>
+        <div class="accordion-content">
+          <div class="accordion-row"><div class="accordion-row-key">Temp. încărcare</div><div class="accordion-row-val">0°C ~ 55°C</div></div>
+          <div class="accordion-row"><div class="accordion-row-key">Temp. descărcare</div><div class="accordion-row-val">-20°C ~ 60°C</div></div>
+          <div class="accordion-row"><div class="accordion-row-key">Grad protecție</div><div class="accordion-row-val">IP31</div></div>
+          <div class="accordion-row"><div class="accordion-row-key">Tip instalare</div><div class="accordion-row-val">Interior / Perete / Sol</div></div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header"><span>Dimensiuni & Greutate</span><div class="accordion-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div></div>
+        <div class="accordion-content">
+          <div class="accordion-row"><div class="accordion-row-key">Dimensiuni (L/W/H)</div><div class="accordion-row-val">980 / 460 / 230 mm</div></div>
+          <div class="accordion-row"><div class="accordion-row-key">Greutate</div><div class="accordion-row-val">120 kg</div></div>
+          <div class="accordion-row"><div class="accordion-row-key">Scalabilitate</div><div class="accordion-row-val">Până la 4 unități paralel</div></div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header"><span>Garanție & Cicluri</span><div class="accordion-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div></div>
+        <div class="accordion-content">
+          <div class="accordion-row"><div class="accordion-row-key">Garanție timp</div><div class="accordion-row-val">10 ani</div></div>
+          <div class="accordion-row"><div class="accordion-row-key">Cicluri garantate</div><div class="accordion-row-val">până la 8000</div></div>
+          <div class="accordion-row"><div class="accordion-row-key">Compatibilitate</div><div class="accordion-row-val">Low Voltage (LV)</div></div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header"><span>Comunicare & Certificări</span><div class="accordion-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div></div>
+        <div class="accordion-content">
+          <div class="accordion-row"><div class="accordion-row-key">Comunicare</div><div class="accordion-row-val">CAN 2.0 / RS485</div></div>
+          <div class="accordion-row"><div class="accordion-row-key">Certificări</div><div class="accordion-row-val">UN38.3, IEC62619, CE</div></div>
+          <div class="accordion-row"><div class="accordion-row-key">Invertoare compat.</div><div class="accordion-row-val">Growatt, Deye, Victron, GoodWe</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="chart-wrap reveal-right">
+    <div style="margin-bottom:32px;"><div class="section-label">Comparativ</div><div class="chart-title">Performanță<br>vs Standard</div><div class="chart-sub" style="margin-top:8px;">Comparație cu media pieței LV</div></div>
+    <div class="compare-bar">
+      <div class="cbar-item"><div class="cbar-label"><span>Cicluri de viață</span><span>8,000 / 10 ani</span></div><div class="cbar-track"><div class="cbar-fill" data-w="90"></div></div></div>
+      <div class="cbar-item" style="opacity:0.4"><div class="cbar-label"><span>Media pieței</span><span>~5,000 cicluri</span></div><div class="cbar-track"><div class="cbar-fill alt" data-w="56"></div></div></div>
+      <div class="cbar-item" style="margin-top:16px"><div class="cbar-label"><span>Capacitate kWh</span><span>15.36 kWh</span></div><div class="cbar-track"><div class="cbar-fill" data-w="85"></div></div></div>
+      <div class="cbar-item" style="opacity:0.4"><div class="cbar-label"><span>Medie LV market</span><span>~10 kWh</span></div><div class="cbar-track"><div class="cbar-fill alt" data-w="55"></div></div></div>
+      <div class="cbar-item" style="margin-top:16px"><div class="cbar-label"><span>Siguranță LiFePO4</span><span>Maximă</span></div><div class="cbar-track"><div class="cbar-fill" data-w="95"></div></div></div>
+      <div class="cbar-item" style="opacity:0.4"><div class="cbar-label"><span>Li-NMC alternativ</span><span>Medie</span></div><div class="cbar-track"><div class="cbar-fill alt" data-w="62"></div></div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;">
+      <div style="text-align:center;padding:20px;background:var(--c-bg2);border:1px solid var(--c-border2);border-radius:8px;"><svg width="64" height="64" viewBox="0 0 64 64"><circle cx="32" cy="32" r="26" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="4"/><circle cx="32" cy="32" r="26" fill="none" stroke="url(#rg1)" stroke-width="4" stroke-linecap="round" stroke-dasharray="163" stroke-dashoffset="16" transform="rotate(-90 32 32)"/><defs><linearGradient id="rg1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#00d084"/><stop offset="100%" stop-color="#00ff9f"/></linearGradient></defs><text x="32" y="37" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="14" fill="#00d084">90%</text></svg><div style="font-family:var(--font-mono);font-size:10px;color:var(--c-muted);letter-spacing:1px;margin-top:8px;">EFICIENȚĂ</div></div>
+      <div style="text-align:center;padding:20px;background:var(--c-bg2);border:1px solid var(--c-border2);border-radius:8px;"><svg width="64" height="64" viewBox="0 0 64 64"><circle cx="32" cy="32" r="26" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="4"/><circle cx="32" cy="32" r="26" fill="none" stroke="url(#rg2)" stroke-width="4" stroke-linecap="round" stroke-dasharray="163" stroke-dashoffset="8" transform="rotate(-90 32 32)"/><defs><linearGradient id="rg2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#00d084"/><stop offset="100%" stop-color="#00ff9f"/></linearGradient></defs><text x="32" y="37" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="14" fill="#00ff9f">95%</text></svg><div style="font-family:var(--font-mono);font-size:10px;color:var(--c-muted);letter-spacing:1px;margin-top:8px;">SIGURANȚĂ</div></div>
+      <div style="text-align:center;padding:20px;background:var(--c-bg2);border:1px solid var(--c-border2);border-radius:8px;"><svg width="64" height="64" viewBox="0 0 64 64"><circle cx="32" cy="32" r="26" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="4"/><circle cx="32" cy="32" r="26" fill="none" stroke="url(#rg3)" stroke-width="4" stroke-linecap="round" stroke-dasharray="163" stroke-dashoffset="24" transform="rotate(-90 32 32)"/><defs><linearGradient id="rg3" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#00d084"/><stop offset="100%" stop-color="#00ff9f"/></linearGradient></defs><text x="32" y="37" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="14" fill="#00d084">85%</text></svg><div style="font-family:var(--font-mono);font-size:10px;color:var(--c-muted);letter-spacing:1px;margin-top:8px;">AUTONOMIE</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── GALLERY ── -->
+<section class="gallery-section" id="gallery">
+  <div class="reveal"><div class="section-label">Galerie</div><h2 class="section-title">Produs în<br>detaliu</h2></div>
+  <div class="gallery-showcase reveal" style="transition-delay:0.2s">
+    <!-- Left: Product Image -->
+    <div class="gallery-product">
+      <img src="assets/1-no-bg-big.png" alt="JA Power Porter U15.0 LV">
+    </div>
+    
+    <!-- Right: Feature Cards -->
+    <div class="gallery-features">
+      <div class="feature-card">
+        <div class="tech-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <div class="feature-content">
+          <div class="feature-value">15 kWh</div>
+          <div class="feature-label">Storage Capacity</div>
+          <div class="feature-desc">Putere totală de stocare pentru independență energetică completă</div>
+        </div>
+      </div>
+      
+      <div class="feature-card">
+        <div class="tech-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="feature-content">
+          <div class="feature-value">8,000+</div>
+          <div class="feature-label">Cycle Life</div>
+          <div class="feature-desc">Garantat pentru peste 20 de ani de utilizare zilnică</div>
+        </div>
+      </div>
+      
+      <div class="feature-card">
+        <div class="tech-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div class="feature-content">
+          <div class="feature-value">Grade A</div>
+          <div class="feature-label">Cells</div>
+          <div class="feature-desc">Celule LiFePO4 de cea mai înaltă calitate cu stabilitate termică</div>
+        </div>
+      </div>
+      
+      <div class="feature-card">
+        <div class="tech-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="feature-content">
+          <div class="feature-value">10 Years</div>
+          <div class="feature-label">Warranty</div>
+          <div class="feature-desc">Protecție completă și suport tehnic pentru zece ani</div>
+        </div>
+      </div>
+      
+      <div class="feature-card full-width">
+        <div class="certifications">
+          <div style="font-family:var(--font-mono); font-size:10px; color:var(--c-muted); letter-spacing:1px; margin-bottom:12px; text-transform:uppercase;">Certificări internaționale</div>
+          <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap:8px;">
+            <div style="padding:8px; border:1px solid var(--c-border2); border-radius:4px; text-align:center; font-size:10px; font-weight:bold;">UL LISTED</div>
+            <div style="padding:8px; border:1px solid var(--c-border2); border-radius:4px; text-align:center; font-size:10px; font-weight:bold;">SGS</div>
+            <div style="padding:8px; border:1px solid var(--c-border2); border-radius:4px; text-align:center; font-size:10px; font-weight:bold;">IEC</div>
+            <div style="padding:8px; border:1px solid var(--c-border2); border-radius:4px; text-align:center; font-size:10px; font-weight:bold;">CE</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── DOWNLOADS ── -->
+<section class="downloads" id="downloads">
+  <div class="reveal"><div class="section-label">Documente tehnice</div><h2 class="section-title">Descarcă<br>Documentația</h2><p style="color:var(--c-muted);margin-top:16px;font-size:15px;">Fișe tehnice, manuale de instalare și certificate disponibile pentru download.</p></div>
+  <div class="downloads-grid reveal" style="transition-delay:0.2s">
+    <a href="assets/fisa-tehnica.pdf" class="dl-card" download><div class="dl-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="12" y2="18"/><line x1="15" y1="15" x2="12" y2="18"/></svg></div><div class="dl-info"><div class="dl-name">Fișă Tehnică</div><div class="dl-type">PDF — Datasheet</div></div><div class="dl-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div></a>
+    <a href="assets/user-manual.pdf" class="dl-card" download><div class="dl-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M16 13H8M16 17H8M10 9H8"/></svg></div><div class="dl-info"><div class="dl-name">Manual Instalare</div><div class="dl-type">PDF — Manual</div></div><div class="dl-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div></a>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-section">
+  <p style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--c-accent3);margin-bottom:20px;position:relative;z-index:1;display:flex;align-items:center;gap:8px;justify-content:center;"><span style="width:24px;height:1px;background:var(--c-accent3);display:inline-block;"></span>Soluție completă fotovoltaică<span style="width:24px;height:1px;background:var(--c-accent3);display:inline-block;"></span></p>
+  <h2 class="cta-title">Energia de mâine,<br><span style="color:var(--c-accent);">azi</span></h2>
+  <p class="cta-sub">Stocare fiabilă. Independență reală. 10 ani garanție.</p>
+  <div class="cta-btns"><a href="#specs" class="btn-primary">Specificații complete</a><a href="#downloads" class="btn-secondary">Descarcă documentele</a></div>
+</section>
+
+<footer>
+  <span>JA Power Porter U15.0 LV — LiFePO4 15.36 kWh</span>
+  <span>51.2V · 300Ah · IP31 · 8,000 Cicluri</span>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
