@@ -9,25 +9,54 @@ const li = setInterval(() => {
 window.addEventListener('load', () => {
   setTimeout(() => {
     document.getElementById('loader').classList.add('hidden');
-
     if (heroImg) {
       heroImg.style.animation = 'slideUp 1s cubic-bezier(0.34,1.56,0.64,1) forwards';
     }
-
   }, 1500);
 });
 
 /* CURSOR */
 const cg = document.getElementById('cursor-glow');
-document.addEventListener('mousemove', e => { cg.style.left = e.clientX+'px'; cg.style.top = e.clientY+'px'; });
+document.addEventListener('mousemove', e => {
+  cg.style.left = e.clientX + 'px';
+  cg.style.top  = e.clientY + 'px';
+});
 
-/* NAV */
+/* NAV SCROLL / HIDE */
 let lastY = 0;
 window.addEventListener('scroll', () => {
   const nav = document.getElementById('navbar'), y = window.scrollY;
   nav.classList.toggle('scrolled', y > 60);
   nav.classList.toggle('hidden', y > lastY && y > 200);
   lastY = y;
+});
+
+/* ── BURGER / DRAWER ── */
+const burger        = document.getElementById('burger');
+const drawer        = document.getElementById('drawer');
+const drawerOverlay = document.getElementById('drawer-overlay');
+const drawerClose   = document.getElementById('drawer-close');
+
+function openDrawer() {
+  drawer.classList.add('open');
+  drawerOverlay.classList.add('open');
+  burger.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeDrawer() {
+  drawer.classList.remove('open');
+  drawerOverlay.classList.remove('open');
+  burger.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+burger.addEventListener('click', openDrawer);
+drawerClose.addEventListener('click', closeDrawer);
+drawerOverlay.addEventListener('click', closeDrawer);
+
+/* Close drawer when a link is tapped */
+document.querySelectorAll('.drawer-link').forEach(link => {
+  link.addEventListener('click', closeDrawer);
 });
 
 /* ════════════════════════════════════════
@@ -79,7 +108,6 @@ window.addEventListener('scroll', () => {
   }
   resize(); window.addEventListener('resize', resize);
 
-  /* hex dot grid */
   function hexDots(){
     const sp=70, rows=Math.ceil(H/(sp*0.866))+1, cols=Math.ceil(W/sp)+1;
     cx.fillStyle='rgba(0,208,132,0.035)';
@@ -89,7 +117,6 @@ window.addEventListener('scroll', () => {
     }
   }
 
-  /* flow lines */
   function mkLine(init){
     return {
       x: Math.random()*W,
@@ -102,15 +129,11 @@ window.addEventListener('scroll', () => {
     };
   }
   const lines = Array.from({length:35}, (_,i)=>mkLine(true));
-
-  /* concentric rings from center */
   const rings = [0,60,120].map(d=>({life:-d, max:190, delay:d}));
 
   function frame(){
     cx.clearRect(0,0,W,H);
     hexDots();
-
-    /* flow lines */
     lines.forEach(l=>{
       l.y-=l.spd; l.wb+=0.035; l.x+=Math.sin(l.wb)*0.35;
       if(l.y+l.len<0) Object.assign(l, mkLine(false), {x:Math.random()*W});
@@ -121,8 +144,6 @@ window.addEventListener('scroll', () => {
       cx.strokeStyle=g; cx.lineWidth=l.w;
       cx.beginPath(); cx.moveTo(l.x,l.y); cx.lineTo(l.x+Math.sin(l.wb)*12,l.y-l.len); cx.stroke();
     });
-
-    /* rings */
     rings.forEach(r=>{
       r.life++;
       if(r.life>r.max) r.life=-r.delay;
@@ -133,7 +154,6 @@ window.addEventListener('scroll', () => {
       cx.beginPath(); cx.arc(W/2,H/2,rad,0,Math.PI*2);
       cx.strokeStyle=`rgba(0,208,132,${a})`; cx.lineWidth=1.5*(1-prog); cx.stroke();
     });
-
     requestAnimationFrame(frame);
   }
   frame();
@@ -151,23 +171,16 @@ const io = new IntersectionObserver(entries=>{
 document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>io.observe(el));
 
 const statsInner = document.querySelector('.stats-inner');
-
 if (statsInner) {
   new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (!e.isIntersecting) return;
-
       e.target.querySelectorAll('.stat-cell').forEach((c, i) => {
         setTimeout(() => {
-          c.style.transition =
-            'opacity 0.6s,transform 0.6s cubic-bezier(0.4,0,0.2,1),all 0.3s';
-
+          c.style.transition = 'opacity 0.6s,transform 0.6s cubic-bezier(0.4,0,0.2,1),all 0.3s';
           c.style.opacity = '1';
           c.style.transform = 'translateY(0)';
-
-          c.querySelectorAll('.stat-bar-fill').forEach(b => {
-            b.style.width = b.dataset.w + '%';
-          });
+          c.querySelectorAll('.stat-bar-fill').forEach(b => { b.style.width = b.dataset.w + '%'; });
         }, i * 120);
       });
     });
@@ -208,7 +221,7 @@ document.querySelectorAll('.accordion-header').forEach(h=>{
 });
 
 /* ── 3D HERO PRODUCT IMAGE EFFECTS ── */
-const heroImg = document.querySelector('.hero-product-img');
+const heroImg     = document.querySelector('.hero-product-img');
 const heroWrapper = document.querySelector('.hero-product-wrapper');
 
 if (heroImg && heroWrapper) {
@@ -217,67 +230,39 @@ if (heroImg && heroWrapper) {
   let currentRotateX = 0;
   let currentRotateY = 0;
   let currentScrollY = 0;
-  
-  // Set animation complete after delay matching CSS animation
-  setTimeout(() => {
-    animationComplete = true;
-  }, 2000); // MUST be longer than animation + loader
-  
-  // Mouse tracking - interactive 3D rotation on hover
+
+  setTimeout(() => { animationComplete = true; }, 2000);
+
   document.addEventListener('mousemove', (e) => {
     if (!animationComplete) return;
-    
     const hero = document.querySelector('.hero');
-    if (!hero || !hero.contains(e.target.closest('.hero-product-wrapper'))) return;
-    
+    if (!hero || !hero.contains(e.target.closest && e.target.closest('.hero-product-wrapper'))) return;
     isHovering = true;
-    
     const rect = heroWrapper.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-    
-    const mouseX = (e.clientX - centerX) / rect.width;
-    const mouseY = (e.clientY - centerY) / rect.height;
-    
+    const mouseX = (e.clientX - rect.left - rect.width / 2)  / rect.width;
+    const mouseY = (e.clientY - rect.top  - rect.height / 2) / rect.height;
     currentRotateX = -mouseY * 15;
-    currentRotateY = mouseX * 15;
-    
+    currentRotateY =  mouseX * 15;
     heroImg.style.transform = `translateY(${currentScrollY}px) rotateX(${currentRotateX}deg) rotateY(${currentRotateY}deg) scale(1.05)`;
   });
-  
-  // Reset on mouse leave
+
   heroWrapper.addEventListener('mouseleave', () => {
     if (!animationComplete) return;
-    isHovering = false;
-    currentRotateX = 0;
-    currentRotateY = 0;
+    isHovering = false; currentRotateX = 0; currentRotateY = 0;
     heroImg.style.transform = `translateY(${currentScrollY}px) rotateX(0deg) rotateY(0deg) scale(1)`;
   });
-  
-  // Scroll-based parallax translation + rotation
+
   window.addEventListener('scroll', () => {
     if (!animationComplete) return;
-    
     const hero = document.querySelector('.hero');
     if (!hero) return;
-    
     const heroRect = hero.getBoundingClientRect();
-    const heroCenter = heroRect.top + heroRect.height / 2;
-    const viewportCenter = window.innerHeight / 2;
-    
-    // Parallax translation based on scroll
-    currentScrollY = (heroCenter - viewportCenter) * 0.5;
-    
+    currentScrollY = (heroRect.top + heroRect.height / 2 - window.innerHeight / 2) * 0.5;
     if (!isHovering) {
-      // When not hovering, apply scroll-based rotation
-      const heroVisibility = Math.max(0, Math.min(1, 1 - heroRect.top / window.innerHeight));
-      const scrollRotate = heroVisibility * 20;
-      heroImg.style.transform = `translateY(${currentScrollY}px) rotateX(${scrollRotate}deg) rotateY(0deg) scale(1)`;
+      const vis = Math.max(0, Math.min(1, 1 - heroRect.top / window.innerHeight));
+      heroImg.style.transform = `translateY(${currentScrollY}px) rotateX(${vis * 20}deg) rotateY(0deg) scale(1)`;
     } else {
-      // When hovering, keep the rotation but update position
       heroImg.style.transform = `translateY(${currentScrollY}px) rotateX(${currentRotateX}deg) rotateY(${currentRotateY}deg) scale(1.05)`;
     }
   });
-
-  
 }
