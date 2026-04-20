@@ -266,3 +266,20 @@ if (heroImg && heroWrapper) {
     }
   });
 }
+
+const themeToggle = document.getElementById('theme-toggle');
+const themeStyle = document.getElementById('theme-style');
+
+let currentTheme = 'dark';
+
+themeToggle.addEventListener('click', () => {
+  if (currentTheme === 'light') {
+    themeStyle.href = 'dark.css';
+    currentTheme = 'dark';
+    themeToggle.textContent = '☀️';
+  } else {
+    themeStyle.href = 'light.css';
+    currentTheme = 'light';
+    themeToggle.textContent = '🌙';
+  }
+});
