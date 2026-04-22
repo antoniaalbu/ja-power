@@ -684,25 +684,29 @@ a.footer-logo:hover {
   .cta-title { font-size: clamp(36px,10vw,60px); }
   .cta-btns { flex-direction: column; align-items: center; }
   footer {
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    }
-    .footer-meta {
-    text-align: left;
-    }
+  flex-direction: column;
+  align-items: flex-start;  /* ← change from center to flex-start */
+  gap: 24px;
+}
+.footer-right {
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+.footer-meta { text-align: left; }
+.footer-info { text-align: left; }
+.footer-contact { align-items: flex-start; }
 }
 
 @media (max-width: 480px) {
   :root { --diag: 8vw; }
   .stats-inner { grid-template-columns: 1fr; }
   .hero-ctas { flex-direction: column; align-items: center; }
-  footer {
-  grid-template-columns: 1fr;
-}
-.footer-logo { display: flex; justify-content: center; }
-.footer-meta { text-align: center; }
-.footer-contact { align-items: center; }
-.footer-info { text-align: center; }
+ footer { align-items: flex-start; }
+.footer-logo { justify-content: flex-start; }
+.footer-meta { text-align: left; }
+.footer-info { text-align: left; }
+.footer-contact { align-items: flex-start; }
 .specs-section {
   padding: calc(var(--diag) + 40px) 16px calc(var(--diag) + 40px);
   overflow: hidden;
@@ -736,5 +740,15 @@ a.footer-logo:hover {
 
 .chart-title {
   font-size: 24px;
+}
+
+/* Fix circle stats overflow */
+.chart-wrap > div:last-child {
+  grid-template-columns: 1fr 1fr !important;
+  gap: 12px;
+}
+
+.chart-wrap > div:last-child > div:last-child {
+  grid-column: 1 / -1;
 }
 }
