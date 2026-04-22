@@ -1,4 +1,3 @@
-/* LOADER */
 let pct = 0;
 const loaderPerc = document.getElementById('loader-perc');
 const li = setInterval(() => {
@@ -54,7 +53,6 @@ burger.addEventListener('click', openDrawer);
 drawerClose.addEventListener('click', closeDrawer);
 drawerOverlay.addEventListener('click', closeDrawer);
 
-/* Close drawer when a link is tapped */
 document.querySelectorAll('.drawer-link').forEach(link => {
   link.addEventListener('click', closeDrawer);
 });
@@ -95,7 +93,7 @@ document.querySelectorAll('.drawer-link').forEach(link => {
 })();
 
 /* ════════════════════════════════════════
-   HERO CANVAS — rings + flow lines + hex dots
+   HERO CANVAS
 ════════════════════════════════════════ */
 (function(){
   const cv = document.getElementById('hero-canvas');
@@ -119,16 +117,13 @@ document.querySelectorAll('.drawer-link').forEach(link => {
 
   function mkLine(init){
     return {
-      x: Math.random()*W,
-      y: init ? Math.random()*H : H+20,
-      spd: Math.random()*1.4+0.4,
-      len: Math.random()*90+40,
-      a: Math.random()*0.28+0.04,
-      w: Math.random()*0.9+0.2,
+      x: Math.random()*W, y: init ? Math.random()*H : H+20,
+      spd: Math.random()*1.4+0.4, len: Math.random()*90+40,
+      a: Math.random()*0.28+0.04, w: Math.random()*0.9+0.2,
       wb: Math.random()*Math.PI*2
     };
   }
-  const lines = Array.from({length:35}, (_,i)=>mkLine(true));
+  const lines = Array.from({length:35}, ()=>mkLine(true));
   const rings = [0,60,120].map(d=>({life:-d, max:190, delay:d}));
 
   function frame(){
@@ -177,7 +172,7 @@ if (statsInner) {
       if (!e.isIntersecting) return;
       e.target.querySelectorAll('.stat-cell').forEach((c, i) => {
         setTimeout(() => {
-          c.style.transition = 'opacity 0.6s,transform 0.6s cubic-bezier(0.4,0,0.2,1),all 0.3s';
+          c.style.transition = 'opacity 0.6s,transform 0.6s cubic-bezier(0.4,0,0.2,1)';
           c.style.opacity = '1';
           c.style.transform = 'translateY(0)';
           c.querySelectorAll('.stat-bar-fill').forEach(b => { b.style.width = b.dataset.w + '%'; });
@@ -192,7 +187,7 @@ new IntersectionObserver(entries=>{
     if(!e.isIntersecting) return;
     e.target.querySelectorAll('.tech-card').forEach((c,i)=>{
       setTimeout(()=>{
-        c.style.transition='opacity 0.7s,transform 0.7s cubic-bezier(0.4,0,0.2,1),all 0.4s cubic-bezier(0.4,0,0.2,1)';
+        c.style.transition='opacity 0.7s,transform 0.7s cubic-bezier(0.4,0,0.2,1)';
         c.style.opacity='1'; c.style.transform='translateY(0)';
       },i*80);
     });
@@ -204,7 +199,7 @@ new IntersectionObserver(entries=>{
     if(!e.isIntersecting) return;
     e.target.querySelectorAll('.accordion-item').forEach((item,i)=>{
       setTimeout(()=>{
-        item.style.transition='opacity 0.5s,transform 0.5s cubic-bezier(0.4,0,0.2,1),all 0.3s';
+        item.style.transition='opacity 0.5s,transform 0.5s cubic-bezier(0.4,0,0.2,1)';
         item.style.opacity='1'; item.style.transform='translateX(0)';
       },i*70);
     });
@@ -220,16 +215,14 @@ document.querySelectorAll('.accordion-header').forEach(h=>{
   });
 });
 
-/* ── 3D HERO PRODUCT IMAGE EFFECTS ── */
+/* ── 3D HERO PRODUCT IMAGE ── */
 const heroImg     = document.querySelector('.hero-product-img');
 const heroWrapper = document.querySelector('.hero-product-wrapper');
 
 if (heroImg && heroWrapper) {
   let animationComplete = false;
   let isHovering = false;
-  let currentRotateX = 0;
-  let currentRotateY = 0;
-  let currentScrollY = 0;
+  let currentRotateX = 0, currentRotateY = 0, currentScrollY = 0;
 
   setTimeout(() => { animationComplete = true; }, 2000);
 
@@ -267,19 +260,26 @@ if (heroImg && heroWrapper) {
   });
 }
 
-const themeToggle = document.getElementById('theme-toggle');
-const themeStyle = document.getElementById('theme-style');
+/* ════════════════════════════════════════
+   THEME TOGGLE
+   Both buttons share class .theme-btn
+   No duplicate IDs, both stay in sync.
+════════════════════════════════════════ */
+const themeStyle   = document.getElementById('theme-style');
+const themeButtons = document.querySelectorAll('.theme-btn');
 
 let currentTheme = 'dark';
 
-themeToggle.addEventListener('click', () => {
-  if (currentTheme === 'light') {
-    themeStyle.href = 'dark.css';
-    currentTheme = 'dark';
-    themeToggle.textContent = '☀️';
-  } else {
-    themeStyle.href = 'light.css';
-    currentTheme = 'light';
-    themeToggle.textContent = '🌙';
-  }
+function setTheme(theme) {
+  currentTheme = theme;
+  themeStyle.href = theme + '.css';
+  themeButtons.forEach(btn => {
+    btn.classList.toggle('light-mode', theme === 'light');
+  });
+}
+
+themeButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+  });
 });
