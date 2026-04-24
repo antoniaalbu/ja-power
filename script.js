@@ -276,6 +276,13 @@ function setTheme(theme) {
   themeButtons.forEach(btn => {
     btn.classList.toggle('light-mode', theme === 'light');
   });
+  
+  const footerLogo = document.querySelector('.footer-logo-img');
+  if (footerLogo) {
+    footerLogo.src = theme === 'light'
+      ? 'assets/profi_logo_black.png'
+      : 'assets/profi_logo_white.png';
+  }
 }
 
 themeButtons.forEach(btn => {
